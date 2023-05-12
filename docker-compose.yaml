@@ -1,0 +1,11 @@
+services:
+  mosquitto:
+    container_name: mtqr
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./config/data:/mosquitto/data/
+      - ./config/log:/mosquitto/log/
