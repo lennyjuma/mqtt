@@ -12,3 +12,6 @@ log_dest file /mosquitto/log/mosquitto.log
 #allow_anonymous true
 ## Authentication ##
 password_file /mosquitto/config/pwfile
+
+
+https://www.youtube.com/watch?v=L26JY2NH-Ys&ab_channel=BurnsHA
