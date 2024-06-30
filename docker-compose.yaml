@@ -1,11 +1,14 @@
+version: '3.8'
+
 services:
   mosquitto:
-    container_name: mtqr
-    image: eclipse-mosquitto
+    image: eclipse-mosquitto:latest
     ports:
-      - 1883:1883
-      - 9001:9001
+      - "1883:1883"
+      - "9001:9001"
     volumes:
-      - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
-      - ./config/data:/mosquitto/data/
-      - ./config/log:/mosquitto/log/
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    restart: unless-stopped
+

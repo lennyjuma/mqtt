@@ -30,3 +30,6 @@ coverage
 config/data/
 config/log/
 config/mosquitto.conf
+mosquitto
+/mosquitto
+./mosquitto
