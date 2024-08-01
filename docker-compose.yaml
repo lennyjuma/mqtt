@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mosquitto:
+    container_name: umbua
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./config/mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./config/mosquitto/pwfile:/mosquitto/config/passwordfile
+      - ./config/data:/mosquitto/data
+      - ./config/log:/mosquitto/log
+    restart: unless-stopped
+    networks:
+      shamba:
+
+
+networks:
+  shamba:
+    external: true
