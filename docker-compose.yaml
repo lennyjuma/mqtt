@@ -4,6 +4,7 @@ services:
   mosquitto:
     container_name: umbua
     image: eclipse-mosquitto
+    restart: unless-stopped
     ports:
       - 1883:1883
       - 9001:9001
