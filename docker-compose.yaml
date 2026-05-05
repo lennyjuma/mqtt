@@ -1,11 +1,12 @@
 services:
   mosquitto:
-    container_name: mtqr
+    container_name: mqtt
     image: eclipse-mosquitto
+    restart: unless-stopped
     ports:
       - 1883:1883
       - 9001:9001
     volumes:
-      - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./config:/mosquitto/config/
       - ./config/data:/mosquitto/data/
       - ./config/log:/mosquitto/log/
